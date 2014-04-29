@@ -1,23 +1,23 @@
 {
-  "name": "grunt-svn-fetch",
+  "name": "grunt-svn-fetch-cred",
   "description": "Ensures specified files are checked out or updated from SVN repository.",
-  "version": "0.1.3",
-  "homepage": "https://github.com/askelkana/svn-fetch",
+  "version": "0.1.4",
+  "homepage": "https://github.com/Jonathan-Penrillian/grunt-svn-fetch",
   "author": {
-    "name": "askelkana",
-    "email": "askelkana@gmail.com"
+    "name": "Jonathan Holmlund",
+    "email": "jonoh89@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/askelkana/svn-fetch.git"
+    "url": "https://github.com/Jonathan-Penrillian/grunt-svn-fetch.git"
   },
   "bugs": {
-    "url": "https://github.com/askelkana/svn-fetch/issues"
+    "url": "https://github.com/Jonathan-Penrillian/grunt-svn-fetch/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/askelkana/svn-fetch/blob/master/LICENSE-MIT"
+      "url": "https://github.com/Jonathan-Penrillian/grunt-svn-fetch/blob/master/LICENSE-MIT"
     }
   ],
   "main": "Gruntfile.js",
