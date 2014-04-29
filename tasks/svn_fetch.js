@@ -19,6 +19,8 @@ module.exports = function (grunt) {
 			bin:         'svn',
 			repository:  '',
 			path:        '',
+            username:    undefined,
+            password:    undefined,
 			execOptions: {}
 		});
 		var done = this.async();
@@ -51,6 +53,9 @@ module.exports = function (grunt) {
 				} else {
 					command = [ command, 'checkout', options.repository + map[path], fullPath ].join(' ');
 				}
+                if(options.username && options.password) {
+                    command = command.concat( [ '--username', options.username, '--password', options.password ].join(' ') );
+                }
 				grunt.log.write('\nProcessing ' + fullPath);
 				exec(command, options.execOptions, function (error, stdout) {
 					grunt.log.write(stdout);
