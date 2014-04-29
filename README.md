@@ -1,4 +1,4 @@
-# grunt-svn-fetch
+# grunt-svn-fetch-cred
 
 > Ensures specified files are checked out or updated from SVN repository.
 
@@ -7,15 +7,17 @@ This plugin requires Grunt `~0.4.0`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
-	npm install grunt-svn-fetch --save-dev
+	npm install grunt-svn-fetch-cred --save-dev
 
 One the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
-	grunt.loadNpmTasks('grunt-svn-fetch');
+	grunt.loadNpmTasks('grunt-svn-fetch-cred');
 
 ## The "svn_fetch" task
 
 ### Overview
+This is a fork from https://www.npmjs.org/package/grunt-svn-fetch allowing you to also enter a username and password into the options
+
 In your project's Gruntfile, add a section named `svn_fetch` to the data object passed into `grunt.initConfig()`.
 
 	grunt.initConfig({
@@ -49,6 +51,20 @@ Default value: `{}`
 
 Specifies any options to pass to the `exec` command when executing the svn cli statements. For example, it may be necessary to increase the default `maxBuffer` for larger repositories.
 
+#### options.username
+Type: `String`
+
+Default value: none
+
+The username of the SVN repository. Username and password will not be used unless both options are used
+
+#### options.password
+Type: `String`
+
+Default value: none
+
+The password of the SVN repository. Username and password will not be used unless both options are used
+
 #### options.repository
 Type: `String`
 
@@ -69,7 +85,9 @@ The base element of the path to where checked out or updated files are placed.
 		svn_fetch: {
 			options: {
 				'repository':	'https://my_repos.com/projectX/trunk/',
-				'path': 		'/svn/projectX/src/'
+				'path': 		'/svn/projectX/src/',
+				'username': 'svnUsername',
+				'password': 'svnPassword'
 			},
 			projectX: {
 	    		map: {
