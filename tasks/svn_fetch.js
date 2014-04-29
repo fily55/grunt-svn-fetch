@@ -54,7 +54,7 @@ module.exports = function (grunt) {
 					command = [ command, 'checkout', options.repository + map[path], fullPath ].join(' ');
 				}
                 if(options.username && options.password) {
-                    command = command.concat( [ '--username', options.username, '--password', options.password ].join(' ') );
+                    command = command.concat( [ ' --username', options.username, '--password', options.password ].join(' ') );
                 }
 				grunt.log.write('\nProcessing ' + fullPath);
 				exec(command, options.execOptions, function (error, stdout) {
