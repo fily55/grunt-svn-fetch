@@ -61,8 +61,10 @@ module.exports = function (grunt) {
 					grunt.log.write(stdout);
 					if (error !== null) {
 						grunt.log.error('\n#' + command + "\n" + error);
+						done(false);
+					} else {
+						getNextMapping();
 					}
-					getNextMapping();
 				});
 			}
 		}
